@@ -156,8 +156,28 @@ a { color: inherit; }
       inline-size:18px; block-size:18px; border-radius:6px; background:linear-gradient(135deg,var(--brand),var(--brand-2));
       margin-top:.15rem; flex:0 0 18px
     }
-    footer{color:var(--muted); font-size:.85rem; padding:28px 0 40px}
-
+    footer {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  padding: 24px 0 32px;
+  margin-top: 40px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafc;
+}
+footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+footer img {
+  height: 32px;
+  transition: transform .2s ease;
+}
+footer img:hover {
+  transform: scale(1.08);
+}
     /* Print */
     @media print{
       .toolbar{display:none}
@@ -370,7 +390,17 @@ a { color: inherit; }
   </div>
 
   <footer class="container">
-      </footer>
+  <a href="https://chowly.com" target="_blank">
+    <img src="https://mms.businesswire.com/media/20230509005386/en/1787176/22/logo-1_%281%29.jpg" alt="Chowly">
+  </a>
+  <a href="https://www.deliverect.com" target="_blank">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSstH5WNeACK9s9UHkAOJ5UTu1DPByne6U6rw&s" alt="Deliverect">
+  </a>
+  <a href="https://www.itsacheckmate.com" target="_blank">
+    <img src="https://cdn.prod.website-files.com/66130da33ae6c5ad17ca9089/6616986b5f882822b20abeed_Checkmate%20Logo%20-%20Color.svg" alt="ItsaCheckmate">
+  </a>
+</footer>
+
 
   <script>
     // Dark/Light toggle with persistence
@@ -388,6 +418,7 @@ a { color: inherit; }
   </script>
 </body>
 </html>
+
 
 
 
