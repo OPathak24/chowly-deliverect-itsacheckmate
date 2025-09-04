@@ -157,20 +157,33 @@ a { color: inherit; }
       margin-top:.15rem; flex:0 0 18px
     }
     footer {
+  padding: 28px 0 36px;
+  margin-top: 40px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafc;
+  text-align: center;
+}
+
+footer .footer-heading {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+footer .footer-links {
   display: flex;
   justify-content: center;
   gap: 40px;
   align-items: center;
-  padding: 24px 0 32px;
-  margin-top: 40px;
-  border-top: 1px solid #e5e7eb;
-  background: #f9fafc;
 }
+
 footer a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
+
 footer img {
   height: 32px;
   transition: transform .2s ease;
@@ -389,18 +402,20 @@ footer img:hover {
     </div>
   </div>
 
-  <footer class="container">
-  <a href="https://chowly.com" target="_blank">
-    <img src="https://mms.businesswire.com/media/20230509005386/en/1787176/22/logo-1_%281%29.jpg" alt="Chowly">
-  </a>
-  <a href="https://www.deliverect.com" target="_blank">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSstH5WNeACK9s9UHkAOJ5UTu1DPByne6U6rw&s" alt="Deliverect">
-  </a>
-  <a href="https://www.itsacheckmate.com" target="_blank">
+    <footer class="container">
+  <div class="footer-heading">Links</div>
+  <div class="footer-links">
+    <a href="https://chowly.com" target="_blank">
+      <img src="https://get.chowlyinc.com/hubfs/logo_white%20stroke_transparent-Oct-15-2020-07-54-14-53-PM.png" alt="Chowly">
+    </a>
+    <a href="https://www.deliverect.com" target="_blank">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSstH5WNeACK9s9UHkAOJ5UTu1DPByne6U6rw&s" alt="Deliverect">
+    </a>
+    <a href="https://www.itsacheckmate.com" target="_blank">
     <img src="https://cdn.prod.website-files.com/66130da33ae6c5ad17ca9089/6616986b5f882822b20abeed_Checkmate%20Logo%20-%20Color.svg" alt="ItsaCheckmate">
   </a>
+  </div>
 </footer>
-
 
   <script>
     // Dark/Light toggle with persistence
@@ -418,6 +433,7 @@ footer img:hover {
   </script>
 </body>
 </html>
+
 
 
 
