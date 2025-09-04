@@ -6,131 +6,82 @@
   <title>Chowly vs Deliverect vs ItsaCheckmate — Comparison Matrix</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg: #0b1020;
-      --panel: rgba(255,255,255,.06);
-      --panel-strong: rgba(255,255,255,.12);
-      --text: #e9eefb;
-      --muted:#b7c1e1;
-      --brand:#7c8cff;
-      --brand-2:#4bd6c8;
-      --ok:#23d18b;
-      --warn:#ffd166;
-      --bad:#ff6b6b;
-      --shadow: 0 10px 30px rgba(0,0,0,.28);
-      --radius: 18px;
-    }
-    :root.light{
-      --bg: #f6f8ff;
-      --panel: #ffffff;
-      --panel-strong:#ffffff;
-      --text:#1e2437;
-      --muted:#5b6987;
-      --brand:#5b6dff;
-      --brand-2:#1fbfaf;
-      --shadow: 0 10px 30px rgba(10,20,40,.08);
-    }
+    /* ===== Base (Light Theme) ===== */
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body {
-  margin: 0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
-  color: #1e2437;               /* dark text */
-  background: #f9fafc;          /* light background */
-}
-
-a { color: inherit; }
-
-.container { width: min(1200px, 92vw); margin-inline: auto; }
-
-.hero { padding: 56px 0 28px; }
-
-.tag {
-  display: inline-flex; gap: .5rem; align-items: center;
-  padding: .35rem .7rem; border-radius: 999px; font-size: .8rem; letter-spacing: .02em;
-  background: #eef2ff;          /* soft light background */
-  border: 1px solid #dbeafe;    /* light border */
-  color: #1e3a8a;               /* blue-ish text */
-}
-
-.title {
-  font-weight: 800; font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1.05; margin: .6rem 0 .5rem; color: #111827;
-}
-
-.subtitle { color: #4b5563; max-width: 68ch; font-size: 1.05rem; }
-
-.grid { display: grid; gap: 22px; }
-.grid.cols-3 { grid-template-columns: repeat(3,1fr); }
-@media (max-width: 900px){ .grid.cols-3 { grid-template-columns: 1fr; } }
-
-.card {
-  background: #ffffff; border: 1px solid #e5e7eb;
-  border-radius: 18px; padding: 22px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.05);
-}
-.card h3 { margin: 0 0 .35rem; color: #111827; }
-
-.muted { color: #6b7280; }
-
-.pill {
-  display: inline-flex; gap: .45rem; align-items: center;
-  font-size: .8rem; padding: .35rem .6rem; border-radius: 999px;
-  background: #f3f4f6; border: 1px solid #d1d5db; color: #111827;
-}
-
-.split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px; }
-@media (max-width: 1000px){ .split { grid-template-columns: 1fr; } }
-
-.kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
-@media (max-width: 900px){ .kpis { grid-template-columns: repeat(2,1fr); } }
-
-.kpi {
-  background: #ffffff; border: 1px solid #e5e7eb;
-  border-radius: 16px; padding: 18px;
-}
-.kpi strong { font-size: 1.4rem; color: #111827; }
-
-.legend { display: flex; gap: 10px; flex-wrap: wrap; margin: .5rem 0 0; }
-.legend .pill { background: transparent; border: 1px dashed #d1d5db; color: #374151; }
-
-
-    /* Scrollable Matrix table */
-    .table-wrap {
-  background: var(--panel);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  margin-top: 10px;
-}
-    table{width:100%; border-collapse:separate; border-spacing:0}
-    thead th {
-  background: #f3f4f6;
-  color: #111827;
-}
-    th, td{
-      text-align:left; padding:16px 16px; vertical-align:top; border-bottom:1px solid rgba(255,255,255,.08)
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      color:#1e2437;
+      background:#f9fafc;
     }
-    tbody tr:hover td{background-color:rgba(255,255,255,.03)}
+    a{color:inherit}
+    .container{width:min(1200px,92vw); margin-inline:auto}
+    .hero{padding:56px 0 22px}
+    .tag{
+      display:inline-flex; gap:.5rem; align-items:center;
+      padding:.35rem .7rem; border-radius:999px; font-size:.8rem; letter-spacing:.02em;
+      background:#eef2ff; border:1px solid #dbeafe; color:#1e3a8a;
+    }
+    .title{font-weight:800; font-size:clamp(1.8rem,4vw,3rem); line-height:1.05; margin:.6rem 0 .5rem; color:#111827}
+    .subtitle{color:#4b5563; max-width:68ch; font-size:1.05rem}
+
+    .grid{display:grid; gap:22px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width:900px){ .grid.cols-3{grid-template-columns:1fr} }
+
+    .card{
+      background:#fff; border:1px solid #e5e7eb; border-radius:18px; padding:22px;
+      box-shadow:0 4px 12px rgba(0,0,0,.05);
+    }
+    .card h3{margin:0 0 .35rem; color:#111827}
+    .muted{color:#6b7280}
+    .pill{
+      display:inline-flex; gap:.45rem; align-items:center; font-size:.8rem; padding:.35rem .6rem; border-radius:999px;
+      background:#f3f4f6; border:1px solid #d1d5db; color:#111827;
+    }
+    .legend{display:flex; gap:10px; flex-wrap:wrap; margin:.5rem 0 0}
+
+    .split{display:grid; grid-template-columns:1.15fr .85fr; gap:22px}
+    @media (max-width:1000px){ .split{grid-template-columns:1fr} }
+
+    /* ===== KPI Comparison (3 cards) ===== */
+    .kpi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:8px 0 0}
+    @media (max-width:900px){ .kpi-grid{grid-template-columns:1fr} }
+    .kpi-card{background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:18px; box-shadow:0 4px 12px rgba(0,0,0,.05)}
+    .kpi-card h4{margin:0 0 .25rem; color:#111827}
+    .kpi-list{margin:8px 0 0; padding:0; list-style:none}
+    .kpi-list li{margin:8px 0; color:#374151}
+    .kpi-strong{font-weight:700; font-size:1.15rem; color:#111827}
+    .kpi-muted{color:#6b7280; font-size:.9rem}
+    .kpi-bar{height:6px; background:#eef2ff; border-radius:999px; overflow:hidden; margin-top:6px}
+    .kpi-bar > span{display:block; height:100%; background:#4f46e5; width:var(--pct,60%)}
+
+    /* ===== Scrollable Matrix Table (Light) ===== */
+    .table-wrap{
+      background:#fff; border:1px solid #e5e7eb; border-radius:16px;
+      box-shadow:0 4px 12px rgba(0,0,0,.05); margin-top:10px;
+      overflow-x:auto; -webkit-overflow-scrolling:touch;
+    }
+    .table-wrap table{
+      width:100%; border-collapse:separate; border-spacing:0; min-width:1050px; /* forces horizontal scroll on phones */
+    }
+    .table-wrap thead th{
+      position:sticky; top:0; z-index:1;
+      background:#f3f4f6; color:#111827; border-bottom:1px solid #e5e7eb;
+    }
+    .table-wrap th, .table-wrap td{
+      text-align:left; padding:16px; vertical-align:top; border-bottom:1px solid #f1f5f9; color:#111827;
+    }
+    .table-wrap tbody tr:hover td{background:#f9fafb}
     .vendor{font-weight:700}
-    .check{color:var(--ok); font-weight:800}
-    .dash{color:var(--warn); font-weight:800}
-    .x{color:var(--bad); font-weight:800}
-    .nowrap{white-space:nowrap}
-    .note{font-size:.92rem; color:var(--muted); margin:.75rem 0 0}
-
-    /* Zatka section */
-    .bullet{display:flex; gap:.7rem; align-items:flex-start}
-    .icon{
-      inline-size:18px; block-size:18px; border-radius:6px; background:linear-gradient(135deg,var(--brand),var(--brand-2));
-      margin-top:.15rem; flex:0 0 18px
+    .scroll-hint{font-size:.85rem; color:#6b7280; text-align:center; margin-top:8px}
+    @media (max-width:768px){
+      .table-wrap{width:100vw; margin-left:50%; transform:translateX(-50%); border-radius:12px}
     }
-    footer{color:var(--muted); font-size:.85rem; padding:28px 0 40px}
 
-    /* Print */
+    /* Print basics */
     @media print{
-      .toolbar{display:none}
-      body{background:white}
+      body{background:#fff}
       .card,.table-wrap{break-inside:avoid}
     }
   </style>
@@ -139,54 +90,74 @@ a { color: inherit; }
   <div class="container hero">
     <span class="tag">Restaurant Tech • POS Integrations</span>
     <h1 class="title">Chowly vs Deliverect vs ItsaCheckmate</h1>
-    <p class="subtitle">A concise, comparison focusing on POS connectivity, menu sync, APIs, geography, pricing.</p>
-   </div>
+    <p class="subtitle">A concise comparison focusing on POS connectivity, menu sync, APIs, geography, pricing, and how each vendor differs.</p>
+  </div>
 
+  <!-- Top vendor blurbs -->
   <div class="container grid cols-3" style="margin-bottom:18px">
     <div class="card">
       <h3>Chowly</h3>
       <p class="muted">All-in-one platform that connects delivery apps to POS and adds marketing + first-party ordering via the <strong>3C</strong> framework (Create, Capture, Convert).</p>
-      <div class="legend">
-        <span class="pill">Delivery → POS</span><span class="pill">Menu Sync</span><span class="pill">Marketing & Loyalty</span>
-      </div>
+      <div class="legend"><span class="pill">Delivery → POS</span><span class="pill">Menu Sync</span><span class="pill">Marketing & Loyalty</span></div>
     </div>
     <div class="card">
       <h3>Deliverect</h3>
-      <p class="muted">API-first order management layer built for multi-location/global brands. Central menu hub, strong developer tools, treats custom sources as channels.</p>
-      <div class="legend">
-        <span class="pill">Channel API</span><span class="pill">Global Scale</span><span class="pill">Multi-location</span>
-      </div>
+      <p class="muted">API-first order management layer for multi-location/global brands. Central menu hub and developer-friendly approach for custom channels.</p>
+      <div class="legend"><span class="pill">Channel/API Friendly</span><span class="pill">Global Scale</span><span class="pill">Multi-Location</span></div>
     </div>
     <div class="card">
       <h3>ItsaCheckmate</h3>
-      <p class="muted">Operator-friendly bridge for North America. Deep Toast playbooks, unified dashboard for third-party + first-party ordering, practical pricing tiers.</p>
-      <div class="legend">
-        <span class="pill">Toast-strong</span><span class="pill">Multi-location</span><span class="pill">Order with Google</span>
-      </div>
+      <p class="muted">Operator-friendly bridge (North America). Deep Toast playbooks and a unified console for third-party + first-party ordering.</p>
+      <div class="legend"><span class="pill">Toast-Strong</span><span class="pill">Multi-Location</span><span class="pill">Order with Google</span></div>
     </div>
   </div>
 
+  <!-- Quick take + KPI comparison -->
   <div class="container split" style="margin-bottom:24px">
     <div class="card">
       <h3 style="margin-bottom:.35rem">Quick Take</h3>
       <p><strong>Best for building with APIs:</strong> <u>Deliverect</u> — developer-friendly, allows custom channels to plug in and push clean orders directly to Toast and other POS systems.</p>
-      <p><strong>Best North America ops:</strong> <u>ItsaCheckmate</u> — practical for multi-location brands with Toast; confirm custom channel/API access for your voice agent.</p>
-      <p><strong>Best single-vendor stack:</strong> <u>Chowly</u> — delivery→POS + first-party ordering + marketing/loyalty in one place; partner intake may vary.</p>
+      <p><strong>Best North America ops:</strong> <u>ItsaCheckmate</u> — practical for multi-location brands with Toast; operator-friendly console and simple tiered pricing.</p>
+      <p><strong>Best single-vendor stack:</strong> <u>Chowly</u> — delivery→POS + first-party ordering + marketing/loyalty in one place.</p>
     </div>
+
     <div class="card">
       <h3 style="margin-bottom:.35rem">KPIs & Coverage</h3>
-      <div class="kpis">
-        <div class="kpi"><div class="muted">Chowly</div><strong>17k+</strong><div class="muted">restaurants</div></div>
-        <div class="kpi"><div class="muted">Chowly</div><strong>350k+</strong><div class="muted">daily orders</div></div>
-        <div class="kpi"><div class="muted">Geography</div><strong>US/CA/MX</strong><div class="muted">200+ cities (Chowly)</div></div>
-        <div class="kpi"><div class="muted">Integrations</div><strong>1000+ / 130+</strong><div class="muted">Deliverect / ItsaCheckmate</div></div>
+      <div class="kpi-grid">
+        <!-- Chowly -->
+        <div class="kpi-card">
+          <h4>Chowly</h4>
+          <ul class="kpi-list">
+            <li><span class="kpi-muted">Restaurants</span><br><span class="kpi-strong">17k+</span><div class="kpi-bar"><span style="--pct:70%"></span></div></li>
+            <li><span class="kpi-muted">Daily Orders</span><br><span class="kpi-strong">350k+</span><div class="kpi-bar"><span style="--pct:85%"></span></div></li>
+            <li><span class="kpi-muted">Coverage</span><br><span class="kpi-strong">US / CA / MX · 200+ cities</span></li>
+          </ul>
+        </div>
+        <!-- Deliverect -->
+        <div class="kpi-card">
+          <h4>Deliverect</h4>
+          <ul class="kpi-list">
+            <li><span class="kpi-muted">Integrations</span><br><span class="kpi-strong">1000+ total</span><div class="kpi-bar"><span style="--pct:95%"></span></div></li>
+            <li><span class="kpi-muted">Focus</span><br><span class="kpi-strong">Global · Multi-location</span></li>
+            <li><span class="kpi-muted">Strength</span><br><span class="kpi-strong">API-friendly “channel” model</span></li>
+          </ul>
+        </div>
+        <!-- ItsaCheckmate -->
+        <div class="kpi-card">
+          <h4>ItsaCheckmate</h4>
+          <ul class="kpi-list">
+            <li><span class="kpi-muted">Partners</span><br><span class="kpi-strong">130+ tech partners</span><div class="kpi-bar"><span style="--pct:65%"></span></div></li>
+            <li><span class="kpi-muted">Coverage</span><br><span class="kpi-strong">US / Canada emphasis</span></li>
+            <li><span class="kpi-muted">Strength</span><br><span class="kpi-strong">Toast-strong, operator-friendly</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- Matrix -->
   <div class="container">
     <div class="table-wrap">
-     <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
       <table>
         <thead>
           <tr>
@@ -199,94 +170,74 @@ a { color: inherit; }
         <tbody>
           <tr>
             <td class="vendor">Core Focus</td>
-            <td>All-in-one: marketplace→POS, first-party ordering, marketing & loyalty via <strong>3C</strong> (Create/Capture/Convert).</td>
-            <td>API-first orchestration: centralized menus, multi-location controls, global routing of orders.</td>
-            <td>Operator hub for North America: simple management of marketplaces + first-party from one dashboard.</td>
+            <td>All-in-one: marketplace→POS, first-party ordering, marketing & loyalty via <strong>3C</strong>.</td>
+            <td>API-first orchestration: centralized menus, multi-location controls, global routing.</td>
+            <td>Operator hub for North America: straightforward management of marketplaces & direct ordering.</td>
           </tr>
           <tr>
             <td class="vendor">POS Support</td>
-            <td> 50+ POS (Toast, Clover, Square, Aloha/NCR, etc.).</td>
-            <td> Broad coverage including Toast, Oracle/Micros, Lightspeed, Square.</td>
-            <td> Deep with Toast & major US POS; 130+ partner ecosystem.</td>
+            <td>50+ POS (Toast, Clover, Square, Aloha/NCR, etc.).</td>
+            <td>Very broad (Toast, Oracle/Micros, Lightspeed, Square, etc.).</td>
+            <td>Deep with Toast & other major US POS; 130+ partner ecosystem.</td>
           </tr>
           <tr>
             <td class="vendor">Delivery Apps</td>
-            <td>Uber Eats, DoorDash, Grubhub, etc. with real-time ingestion and ticketing to KDS/printers.</td>
-            <td>Full marketplace roster across regions; strong for international chains.</td>
+            <td>Uber Eats, DoorDash, Grubhub; real-time ingestion to POS/KDS.</td>
+            <td>Full marketplace roster across regions; built for international chains.</td>
             <td>Uber Eats, DoorDash, Grubhub + Order with Google; US/Canada focus.</td>
           </tr>
           <tr>
             <td class="vendor">Menu Sync</td>
-            <td>Instant updates, price changes, 86ing; keeps apps and POS aligned.</td>
+            <td>Instant price/86ing updates; keeps apps and POS aligned.</td>
             <td>Central menu hub; push to many locations/channels at once.</td>
-            <td>“EveryWare” menu manager with rounding/price elevation options.</td>
+            <td>“EveryWare” menu manager; rounding/elevation options.</td>
           </tr>
           <tr>
-            <td class="vendor">APIs & SDKs</td>
-            <td>Managed integrations (less open for custom channels); solid bi-directional data flow.</td>
-            <td><strong>Open developer motion</strong> — register custom sources (e.g., voice agent) as a channel.</td>
-            <td>APIs via partnerships; confirm access for custom voice-agent ingestion.</td>
+            <td class="vendor">APIs / Custom Build</td>
+            <td>Managed integrations; less open for custom channels.</td>
+            <td>Developer-friendly; allows custom sources as channels.</td>
+            <td>APIs via partnership; custom channel access case-by-case.</td>
           </tr>
           <tr>
             <td class="vendor">First-Party Ordering</td>
-            <td>Website + app + loyalty + marketing included.</td>
+            <td>Website + app + loyalty + marketing.</td>
             <td>Direct/Kiosk options; easy to stitch via APIs.</td>
-            <td>Web/app ordering, kiosk, catering from single console.</td>
+            <td>Web/app ordering, kiosk, catering from one console.</td>
           </tr>
           <tr>
             <td class="vendor">Geography</td>
             <td>US / Canada / Mexico; 200+ cities.</td>
             <td>Global footprint (US, CA, EU, ME, APAC).</td>
-            <td>Primarily US & Canada with deep marketplace ties.</td>
+            <td>Primarily US & Canada; deep marketplace ties.</td>
           </tr>
           <tr>
             <td class="vendor">Pricing Style</td>
-            <td>Indicative: $50 setup / $39 mo per location + ~$0.39 per order.</td>
-            <td>Quote-based; volume & module driven (mid-market/enterprise).</td>
-            <td>Tiers for SMB to enterprise; simple monthly for multiple platforms.</td>
+            <td>$50 setup / $39 mo per location + ~$0.39 per order (indicative).</td>
+            <td>Quote-based; volume & module driven.</td>
+            <td>Tiers from SMB to enterprise; simple monthly for multiple platforms.</td>
           </tr>
           <tr>
             <td class="vendor">Best Fit</td>
-            <td>One-vendor stack to run marketing + ordering + marketplace + POS.</td>
+            <td>One vendor for marketing + ordering + marketplace + POS.</td>
             <td>Ideal for teams that want to build and scale globally with open APIs.</td>
-            <td>Practical for multi-location operators in North America, especially with Toast.</td>
-          </tr>
-          <tr>
-            <td class="vendor">Zatka Bites Fit</td>
-            <td>Good when partner intake re-opens; strong menu sync & POS push.</td>
-            <td><strong>Excellent</strong>: plug voice agent via APIs; clean orders to Toast.</td>
-            <td><strong>Strong</strong>: confirm custom API path; great day-to-day Toast ops.</td>
+            <td>Multi-location operators in North America, especially with Toast.</td>
           </tr>
         </tbody>
       </table>
     </div>
-    </div>
-    <div class="grid" style="margin:24px 0">
-      <div class="card">
-        <h3 style="margin-bottom:.35rem">How they differ</h3>
-        <p><strong>Chowly vs Deliverect:</strong> Chowly is the “one-stop shop” — it doesn’t just connect delivery apps to POS, it also gives you first-party ordering and marketing tools in the same box. Deliverect leans “builder-friendly”: it centralizes menus and gives developers more freedom to plug in custom channels (like a voice agent) and scale across many countries.</p>
+    <p class="scroll-hint">← slide to see more →</p>
+  </div>
+
+  <!-- Differences section -->
+  <div class="container" style="margin:24px 0 36px">
+    <div class="card">
+      <h3 style="margin-bottom:.4rem">How they differ (plain English)</h3>
+      <p><strong>Chowly vs Deliverect:</strong> Chowly is the “one-stop shop” — it doesn’t just connect delivery apps to POS, it also gives you first-party ordering and marketing tools in the same box. Deliverect leans “builder-friendly”: it centralizes menus and gives developers more freedom to plug in custom channels and scale across many countries.</p>
       <p><strong>Chowly vs ItsaCheckmate:</strong> Both solve tablet chaos and push orders into POS, but Chowly adds more marketing/loyalty features, while ItsaCheckmate focuses on an easy operational console for North American brands (very Toast-friendly) with simple tiered pricing.</p>
       <p><strong>Deliverect vs ItsaCheckmate:</strong> Deliverect is the global/API-first choice for chains that want to build on top of the platform and manage huge menu footprints. ItsaCheckmate is the pragmatic choice for US/Canada operators that want reliable marketplace + POS syncing with minimal fuss.</p>
-    
     </div>
   </div>
 
-  <footer class="container">
-      </footer>
-
-  <script>
-    // Dark/Light toggle with persistence
-    const root = document.documentElement;
-    const key = "theme-preference";
-    const themeBtn = document.getElementById('themeBtn');
-    const saved = localStorage.getItem(key);
-    if(saved === 'light'){ root.classList.add('light'); themeBtn.setAttribute('aria-pressed','true'); }
-    themeBtn.addEventListener('click', ()=>{
-      root.classList.toggle('light');
-      const isLight = root.classList.contains('light');
-      localStorage.setItem(key, isLight ? 'light' : 'dark');
-      themeBtn.setAttribute('aria-pressed', String(isLight));
-    });
-  </script>
+  <footer class="container"></footer>
 </body>
 </html>
