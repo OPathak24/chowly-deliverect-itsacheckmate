@@ -78,7 +78,28 @@ a { color: inherit; }
   font-size: .8rem; padding: .35rem .6rem; border-radius: 999px;
   background: #f3f4f6; border: 1px solid #d1d5db; color: #111827;
 }
+/* === KPI comparison (3 vendors, 3 stats each) === */
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 0}
+@media (max-width:900px){.kpi-grid{grid-template-columns:1fr}}
 
+.kpi-card{
+  background:#fff;border:1px solid #e5e7eb;border-radius:16px;
+  padding:18px;box-shadow:0 4px 12px rgba(0,0,0,.05)
+}
+.kpi-card h4{margin:0 0 .25rem;color:#111827}
+.kpi-metric{margin:10px 0}
+.kpi-label{color:#6b7280;font-size:.9rem}
+.kpi-value{font-weight:700;color:#111827}
+.kpi-meter{height:6px;background:#eef2ff;border-radius:999px;overflow:hidden;margin-top:6px}
+.kpi-meter > span{display:block;height:100%;background:#4f46e5;width:var(--pct,60%)}
+
+/* For “N/A” daily-orders where no public number exists */
+.kpi-meter.na{
+  background:
+    repeating-linear-gradient(45deg,#eef2ff,#eef2ff 6px,#e5e7eb 6px,#e5e7eb 12px);
+}
+.kpi-note{color:#6b7280;font-size:.85rem;margin-top:8px}
+    
 .split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px; }
 @media (max-width: 1000px){ .split { grid-template-columns: 1fr; } }
 
@@ -178,14 +199,81 @@ a { color: inherit; }
       <p><strong>Best single-vendor stack:</strong> <u>Chowly</u> — delivery→POS + first-party ordering + marketing/loyalty in one place; partner intake may vary.</p>
     </div>
     <div class="card">
-      <h3 style="margin-bottom:.35rem">KPIs & Coverage</h3>
-      <div class="kpis">
-        <div class="kpi"><div class="muted">Chowly</div><strong>17k+</strong><div class="muted">restaurants</div></div>
-        <div class="kpi"><div class="muted">Chowly</div><strong>350k+</strong><div class="muted">daily orders</div></div>
-        <div class="kpi"><div class="muted">Geography</div><strong>US/CA/MX</strong><div class="muted">200+ cities (Chowly)</div></div>
-        <div class="kpi"><div class="muted">Integrations</div><strong>1000+ / 130+</strong><div class="muted">Deliverect / ItsaCheckmate</div></div>
+  <h3 style="margin-bottom:.35rem">KPIs & Coverage</h3>
+
+  <div class="kpi-grid">
+    <!-- Chowly -->
+    <div class="kpi-card">
+      <h4>Chowly</h4>
+
+      <div class="kpi-metric">
+        <div class="kpi-label">Restaurants / Locations</div>
+        <div class="kpi-value">17k+ locations</div>
+        <div class="kpi-meter"><span style="--pct:25%"></span></div>
+      </div>
+
+      <div class="kpi-metric">
+        <div class="kpi-label">Daily Orders</div>
+        <div class="kpi-value">350k+ / day</div>
+        <div class="kpi-meter"><span style="--pct:57%"></span></div>
+      </div>
+
+      <div class="kpi-metric">
+        <div class="kpi-label">Coverage</div>
+        <div class="kpi-value">North America — US / CA / MX</div>
       </div>
     </div>
+
+    <!-- Deliverect -->
+    <div class="kpi-card">
+      <h4>Deliverect</h4>
+
+      <div class="kpi-metric">
+        <div class="kpi-label">Restaurants / Locations</div>
+        <div class="kpi-value">68k+ locations</div>
+        <div class="kpi-meter"><span style="--pct:100%"></span></div>
+      </div>
+
+      <div class="kpi-metric">
+        <div class="kpi-label">Daily Orders</div>
+        <div class="kpi-value">≈ 614k / day <span class="kpi-label">(4.3M per week, 2023)</span></div>
+        <div class="kpi-meter"><span style="--pct:100%"></span></div>
+      </div>
+
+      <div class="kpi-metric">
+        <div class="kpi-label">Coverage</div>
+        <div class="kpi-value">52 countries</div>
+      </div>
+    </div>
+
+    <!-- ItsaCheckmate -->
+    <div class="kpi-card">
+      <h4>ItsaCheckmate</h4>
+
+      <div class="kpi-metric">
+        <div class="kpi-label">Restaurants / Locations</div>
+        <div class="kpi-value">27k+ locations</div>
+        <div class="kpi-meter"><span style="--pct:40%"></span></div>
+      </div>
+
+      <div class="kpi-metric">
+        <div class="kpi-label">Daily Orders</div>
+        <div class="kpi-value">N/A (not publicly disclosed)</div>
+        <div class="kpi-meter na"></div>
+      </div>
+
+      <div class="kpi-metric">
+        <div class="kpi-label">Coverage</div>
+        <div class="kpi-value">US & Canada emphasis (global customers)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-note">
+    Notes: “Daily Orders” bar is normalized to the highest known value. Deliverect’s daily number is derived from 4.3M/week (2023). ItsaCheckmate has not publicly disclosed daily order volume.
+  </div>
+</div>
+
   </div>
 
   <div class="container">
@@ -294,4 +382,5 @@ a { color: inherit; }
   </script>
 </body>
 </html>
+
 
